@@ -5,10 +5,10 @@
         public Account(string name, decimal balance, string relatedBankAccount = null,
             decimal? expectedIncomes = null, decimal? targetBalance = null)
         {
+            Name = name;
             Balance = balance;
             RelatedBankAccount = relatedBankAccount;
             ExpectedIncomes = expectedIncomes;
-            Name = name;
             TargetBalance = targetBalance;
         }
 

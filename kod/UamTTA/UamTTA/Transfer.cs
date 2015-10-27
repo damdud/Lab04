@@ -4,7 +4,7 @@ namespace UamTTA
 {
     public class Transfer
     {
-        public Transfer(decimal amount, Account destinationAccount, Account sourceAccount,
+        public Transfer(decimal amount, Account sourceAccount, Account destinationAccount,
             Budget budget, DateTime? plannedDate, DateTime? transferDate,
             string reference = null)
         {
