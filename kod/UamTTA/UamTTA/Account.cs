@@ -12,15 +12,15 @@
             TargetBalance = targetBalance;
         }
 
-        public string Name { get; set; }
+        public string Name { get; }
 
-        public string RelatedBankAccount { get; set; }
+        public string RelatedBankAccount { get; }
 
-        public decimal Balance { get; set; }
+        public decimal Balance { get; }
 
-        public decimal? ExpectedIncomes { get; set; }
+        public decimal? ExpectedIncomes { get; }
 
-        public decimal? TargetBalance { get; set; }
+        public decimal? TargetBalance { get; }
 
         public override string ToString()
         {
