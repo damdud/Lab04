@@ -15,7 +15,6 @@ namespace UamTTA
             ValidTo = validTo;
             Operations = operations ?? Enumerable.Empty<Transfer>();
             RelatedAccounts = relatedAccounts ?? Enumerable.Empty<Account>();
-            ClearingAccount = clearingAccount;
         }
 
         public DateTime ValidFrom { get; }
@@ -26,11 +25,9 @@ namespace UamTTA
 
         public IEnumerable<Transfer> Operations { get; }
 
-        public Account ClearingAccount { get; }
-
         public override string ToString()
         {
-            return $"ValidFrom: {ValidFrom}, ValidTo: {ValidTo}, RelatedAccounts: {RelatedAccounts.ToElementsString()}, Operations: {Operations.ToElementsString()}, ClearingAccount: {ClearingAccount}";
+            return $"ValidFrom: {ValidFrom}, ValidTo: {ValidTo}, RelatedAccounts: {RelatedAccounts.ToElementsString()}, Operations: {Operations.ToElementsString()}";
         }
     }
 }
