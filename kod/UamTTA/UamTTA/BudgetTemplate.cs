@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
-using System.Runtime.Remoting.Metadata.W3cXsd2001;
+using System.Linq;
 
 namespace UamTTA
 {
     public class BudgetTemplate
     {
-        public BudgetTemplate(IEnumerable<Account> defaultAccounts, Duration defaultDuration, string defaultName)
+        public BudgetTemplate(Duration defaultDuration, string defaultName, IEnumerable<Account> defaultAccounts = null)
         {
-            DefaultAccounts = defaultAccounts;
+            DefaultAccounts = defaultAccounts ?? Enumerable.Empty<Account>();
             DefaultDuration = defaultDuration;
             DefaultName = defaultName;
         }
