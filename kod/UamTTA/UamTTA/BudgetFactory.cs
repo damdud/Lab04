@@ -18,9 +18,11 @@ namespace UamTTA
                     break;
 
                 case Duration.Quarterly:
+                    endDate = AddQuarter(startDate);
                     break;
 
                 case Duration.Yearly:
+                    endDate = AddYear(startDate);
                     break;
 
                 default:
@@ -42,6 +44,20 @@ namespace UamTTA
             int daysInNextMonth = DateTime.DaysInMonth(endDate.Year, endDate.Month);
             if (daysInNextMonth >= 30 && (endDate.Day < daysInNextMonth || daysInNextMonth == daysInStartDate))
                 endDate = endDate.AddDays(-1);
+            return endDate;
+        }
+
+        private static DateTime AddQuarter(DateTime startDate)
+        {
+            DateTime endDate = startDate.AddMonths(3);
+            endDate = endDate.AddDays(-1);
+            return endDate;
+        }
+
+        private static DateTime AddYear(DateTime startDate)
+        {
+            DateTime endDate = startDate.AddYears(1);
+            endDate = endDate.AddDays(-1);
             return endDate;
         }
     }
